@@ -1,0 +1,17 @@
+# Destination ZFS path
+SYNC_DST_PATH=""
+
+# Source hostnames (Used to create destination paths)
+SYNC_SRC_HOST=(
+    [src-host-1]=""
+)
+
+# Prefix for all paths on a particular SRC host
+SYNC_SRC_PATH_PREFIX=(
+    [src-host-1]=""
+)
+
+# Paths on each SRC_HOST to backup (OK to specify multiple, space delimited)
+SYNC_SRC_PATHS=(
+    [src-host-1]=""
+)
