@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SCRIPT_PATH=$(dirname ${BASH_SOURCE[0]})
+
 # Confirm this script is not currently running
 for pid in $(pidof -x auto-syncoid.sh); do
     if [ $pid != $$ ]; then
@@ -12,7 +14,7 @@ done
 declare -A SYNC_SRC_HOST
 declare -A SYNC_SRC_PATH_PREFIX
 declare -A SYNC_SRC_PATHS
-source auto-syncoid.conf
+source "${SCRIPT_PATH}/auto-syncoid.conf"
 
 # Do the loop de loop!
 for HOST in ${!SYNC_SRC_HOST[@]} ; do
