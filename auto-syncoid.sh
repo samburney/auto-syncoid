@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCRIPT_PATH=$(dirname ${BASH_SOURCE[0]})
+PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # Confirm this script is not currently running
 for pid in $(pidof -x auto-syncoid.sh); do
