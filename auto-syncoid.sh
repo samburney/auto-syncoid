@@ -23,6 +23,6 @@ for HOST in ${!SYNC_SRC_HOST[@]} ; do
     for SRC_PATH in ${SYNC_SRC_PATHS[$HOST]} ; do
         echo "Syncing ${SYNC_SRC_PATH_PREFIX[$HOST]}${SRC_PATH} ==> ${SYNC_DST_PATH}/${SYNC_SRC_HOST[$HOST]}/${SRC_PATH}..."
         zfs create -p "${SYNC_DST_PATH}/${SYNC_SRC_HOST[$HOST]}/$(dirname ${SRC_PATH})"
-        syncoid --no-sync-snap -r "${SYNC_SRC_PATH_PREFIX[$HOST]}${SRC_PATH}" "${SYNC_DST_PATH}/${SYNC_SRC_HOST[$HOST]}/${SRC_PATH}"
+        syncoid --no-sync-snap --exclude-snaps="__replicate_" -r "${SYNC_SRC_PATH_PREFIX[$HOST]}${SRC_PATH}" "${SYNC_DST_PATH}/${SYNC_SRC_HOST[$HOST]}/${SRC_PATH}"
     done
 done
